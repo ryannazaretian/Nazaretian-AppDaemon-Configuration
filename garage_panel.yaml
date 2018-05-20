@@ -1,0 +1,63 @@
+garage:
+    widget_type: cover
+    title: Garage Door
+    entity: cover.garage_door
+    icon_on: mdi-garage-open
+    icon_off: mdi-garage
+    icon_style_active: $style_active_warn
+    state_text: 1
+    state_map:
+      "open": Opened
+      "closed": Closed
+
+flood_light:
+    widget_type: switch
+    title: Flood Light
+    entity: switch.driveway_flood_light
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+
+subaru_presence:
+    widget_type: binary_sensor
+    entity: binary_sensor.subaru_parking
+    title: Subaru Presence
+    icon_on: mdi-home
+    icon_off: mdi-road
+    state_text: 1
+    state_map:
+      "on": Home
+      "off": Away
+
+corvette_presence:
+    widget_type: binary_sensor
+    entity: binary_sensor.corvette_parking
+    title: Corvette Presence
+    icon_on: mdi-home
+    icon_off: mdi-road
+    state_text: 1
+    state_map:
+      "on": Home
+      "off": Away
+
+subaru_distance:
+    widget_type: sensor
+    title: Subaru Distance
+    units: "in"
+    entity: sensor.subaru_sensor_distance
+
+corvette_distance:
+    widget_type: sensor
+    title: Corvette Distance
+    units: in
+    entity: sensor.corvette_sensor_distance
+
+garage_temperature:
+    widget_type: sensor
+    title: Garage Temperature
+    entity: sensor.garage_temperature
+    unit: "&deg;F"
+
+layout:
+    - garage(2x2), subaru_presence(3x1), subaru_distance(2x1)
+    - corvette_presence(3x1), corvette_distance(2x1)
+    - flood_light(2x1), spacer(3x1), garage_temperature(2x1)

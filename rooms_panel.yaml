@@ -1,0 +1,94 @@
+load_garage:
+    widget_type: navigate
+    title: Garage
+    icon_inactive: fa-car
+    dashboard: Garage
+
+load_office:
+    widget_type: navigate
+    title: Office
+    icon_inactive: mdi-keyboard
+    dashboard: Office
+
+load_master_bedroom:
+    widget_type: navigate
+    title: Master Bedroom
+    icon_inactive: fa-bed
+    dashboard: MasterBedroom
+
+load_master_bathroom:
+    widget_type: navigate
+    title: Master Bathroom
+    icon_inactive: fa-bath
+    dashboard: MasterBathroom
+
+load_kitchen:
+    widget_type: navigate
+    title: Kitchen
+    icon_inactive: mdi-fridge
+    dashboard: Kitchen
+
+load_dining_room:
+    widget_type: navigate
+    title: Dining Room
+    icon_inactive: mdi-silverware
+    dashboard: DiningRoom
+
+load_living_room:
+    widget_type: navigate
+    title: Living Room
+    icon_inactive: fa-tv
+    dashboard: LivingRoom
+
+load_north_front_bedroom:
+    widget_type: navigate
+    title: Ben's Bedroom
+    icon_inactive: mdi-baby
+    dashboard: NorthFrontBedroom
+
+load_north_back_bedroom:
+    widget_type: navigate
+    title: Spare Bedroom
+    icon_inactive: fa-bed
+    dashboard: NorthBackBedroom
+
+load_north_bathroom:
+    widget_type: navigate
+    title: North Bathroom
+    icon_inactive: fa-bath
+    dashboard: NorthBathroom
+
+load_half_bathroom:
+    widget_type: navigate
+    title: Half Bathroom
+    icon_inactive: fa-bath
+    dashboard: HalfBathroom
+
+load_driveway:
+    widget_type: navigate
+    title: Driveway
+    icon_inactive: mdi-road-variant
+    dashboard: Driveway
+
+load_front_porch:
+    widget_type: navigate
+    title: Front Porch
+    icon_inactive: fa-tree
+    dashboard: FrontPorch
+
+load_back_porch:
+    widget_type: navigate
+    title: Back Porch
+    icon_inactive: fa-tree
+    dashboard: BackPorch
+
+load_home:
+    widget_type: navigate
+    title: Whole Home
+    icon_inactive: fa-home
+    dashboard: WholeHome
+
+layout:
+    - load_home(2x1), load_office, load_living_room, load_dining_room, load_kitchen, load_half_bathroom
+    - load_driveway(2x1), load_garage(2x1), load_front_porch(2x1), load_back_porch
+    - load_master_bedroom(2x1), load_master_bathroom(2x1), load_north_front_bedroom, load_north_back_bedroom, load_north_bathroom

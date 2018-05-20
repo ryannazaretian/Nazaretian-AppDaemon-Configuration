@@ -1,0 +1,164 @@
+alarm:
+    widget_type: alarm
+    entity: alarm_control_panel.home_alarm
+    title: Alarm
+
+subaru_presence:
+    widget_type: binary_sensor
+    entity: binary_sensor.subaru_parking
+    title: Subaru Presence
+    icon_on: mdi-home
+    icon_off: mdi-road
+    state_text: 1
+    state_map:
+      "on": Home
+      "off": Away
+
+corvette_presence:
+    widget_type: binary_sensor
+    entity: binary_sensor.corvette_parking
+    title: Corvette Presence
+    icon_on: mdi-home
+    icon_off: mdi-road
+    state_text: 1
+    state_map:
+      "on": Home
+      "off": Away
+
+front_door_motion:
+    widget_type: binary_sensor
+    entity: binary_sensor.ring_front_door_motion
+    title: Front Door Motion
+    icon_off: mdi-sleep
+    icon_on: mdi-run-fast
+    state_text: 1
+    state_map:
+      "on": Motion Detected!
+      "off": No Motion
+
+office_door_motion:
+    widget_type: binary_sensor
+    entity: binary_sensor.ring_office_door_motion
+    title: Office Door Motion
+    icon_off: mdi-sleep
+    icon_on: mdi-run-fast
+    state_text: 1
+    state_map:
+      "on": Motion Detected!
+      "off": No Motion
+
+garage_bay_door:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_0
+    title: Garage Bay Door
+    icon_off: mdi-garage
+    icon_on: mdi-garage-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+front_house_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_1
+    title: Front House Windows
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+back_door_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_2
+    title: Back Door & Back Windows
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+master_bedroom_bathroom_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_3
+    title: Master Bedroom Windows
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+front_door:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_4
+    title: Front Door
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+north_bedroom_bathroom_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_5
+    title: North Rooms Windows
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+utility_room_window:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_6
+    title: Utility Room Windows
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+
+garage_entry_door:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_8
+    title: Garage Entry Door
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+smoke_heat_detectors:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_10
+    title: Smoke & Heat Detectors
+    icon_off: mdi-verified
+    icon_on: mdi-fire
+    state_text: 1
+    state_map:
+      "on": Smoke!
+      "off": Clear
+
+security_ready:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_ready
+    title: Security
+    icon_on: mdi-alert-circle
+    icon_off: mdi-verified
+    state_text: 1
+    state_map:
+      "on": Not Ready
+      "off": Ready
+
+layout:
+    - alarm(3x1), security_ready(2x1), subaru_presence, corvette_presence
+    - front_door, back_door_windows, garage_entry_door, garage_bay_door, front_door_motion, office_door_motion, smoke_heat_detectors
+    - front_house_windows, master_bedroom_bathroom_windows, north_bedroom_bathroom_windows, utility_room_window

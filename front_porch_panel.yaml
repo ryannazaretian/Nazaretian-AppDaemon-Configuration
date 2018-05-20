@@ -1,0 +1,54 @@
+front_porch_lights:
+    widget_type: switch
+    title: Porch Lights
+    entity: switch.switch
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+
+ring_last_motion:
+    widget_type: sensor
+    title: Last Motion
+    entity: sensor.ring_front_door_last_motion
+
+ring_last_ding:
+    widget_type: sensor
+    title: Last Ding
+    entity: sensor.ring_front_door_last_ding
+
+ring_recent_motion:
+    widget_type: binary_sensor
+    title: Motion Active
+    entity: binary_sensor.ring_front_door_motion
+    icon_off: mdi-sleep
+    icon_on: mdi-run-fast
+    state_text: 1
+    state_map:
+      "on": Motion Detected!
+      "off": No Motion
+
+ring_recent_ding:
+    widget_type: binary_sensor
+    title: Ding Active
+    entity: binary_sensor.ring_front_door_ding
+    icon_off: mdi-bell-sleep
+    icon_on: mdi-bell-ring
+    state_text: 1
+    state_map:
+      "on": Active
+      "off": Inactive
+
+ring_camera:
+    widget_type: camera
+    title: Front Door Ring
+    refresh: 10
+    entity_picture: !secret front_door_ring_url
+
+ring_battery:
+    widget_type: sensor
+    title: Ring Battery
+    entity: sensor.ring_front_door_battery
+
+layout:
+    - ring_camera(5x3), ring_last_motion, ring_last_ding
+    - ring_recent_motion, ring_recent_ding
+    - front_porch_lights, ring_battery

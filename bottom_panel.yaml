@@ -1,0 +1,45 @@
+load_main_panel:
+    widget_type: navigate
+    title: Main Panel
+    icon_inactive: fa-home
+    dashboard: touchpanel
+
+load_weather:
+    widget_type: navigate
+    title: Weather
+    icon_inactive: fa-cloud
+    dashboard: Weather
+
+load_server:
+    widget_type: navigate
+    title: Server
+    icon_inactive: fa-server
+    dashboard: Server
+
+load_rooms:
+    widget_type: navigate
+    title: Rooms
+    icon_inactive: fa-home
+    dashboard: Rooms
+
+load_security:
+    widget_type: navigate
+    title: Security
+    icon_inactive: mdi-security-home
+    dashboard: Security
+
+reload:
+    widget_type: reload
+    title: Reload
+    icon_active: fa-spinner fa-spin
+    icon_inactive: fa-refresh
+
+load_options:
+    widget_type: navigate
+    title: Options
+    icon_active: fa-spinner fa-spin
+    icon_inactive: fa-cogs
+    dashboard: Options
+
+layout:
+    - load_main_panel, load_rooms, load_weather, load_server, load_security, load_options, reload

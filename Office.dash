@@ -1,0 +1,8 @@
+title: Office
+widget_dimensions: [110, 110]
+widget_margins: [3, 3]
+columns: 7
+
+layout:
+    - include: office_panel
+    - include: bottom_panel

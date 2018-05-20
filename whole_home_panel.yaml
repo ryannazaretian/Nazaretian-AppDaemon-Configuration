@@ -1,0 +1,66 @@
+thermostat:
+    widget_type: climate
+    entity: climate.home
+    title: Thermostat
+
+neato:
+    widget_type: switch
+    entity: vacuum.neato
+    title: Neato Vacuum
+    icon_off: mdi-fan-off
+    icon_on: mdi-fan
+
+neato_battery:
+    widget_type: sensor
+    title: Neato Battery SoC
+    units: "%"
+    entity: vacuum.neato.battery_level
+
+neato_schedule:
+    widget_type: switch
+    entity: switch.neato_schedule
+    title: Neato Schedule
+    icon_on: mdi-timer
+    icon_off: mdi-timer-off
+
+neato_status:
+    widget_type: sensor
+    entity: sensor
+    title: Neato Status
+    entity: vacuum.neato.status
+
+neato_last_run:
+    widget_type: sensor
+    entity: sensor
+    title: Neato Last Run
+    entity: vacuum.neato.clean_stop
+
+neato_map:
+    widget_type: camera
+    refresh: 10
+    entity_picture: !secret neato_map_url
+
+internet_speedtest_download:
+    widget_type: sensor
+    title: Speedtest Download
+    entity: sensor.speedtest_download
+
+internet_speedtest_upload:
+    widget_type: sensor
+    title: Speedtest Upload
+    entity: sensor.speedtest_upload
+
+internet_speedtest_ping:
+    widget_type: sensor
+    title: Speedtest Ping
+    entity: sensor.speedtest_ping
+
+srvr_plex_watching:
+    widget_type: sensor
+    title: Plex Server
+    entity: sensor.plex
+
+layout:
+    - neato, neato_schedule, neato_battery, neato_map(4x3)
+    - neato_status, neato_last_run, srvr_plex_watching
+    - internet_speedtest_download, internet_speedtest_upload, internet_speedtest_ping

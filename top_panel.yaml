@@ -1,0 +1,44 @@
+clock:
+    widget_type: clock
+    date_format_country: "us"
+    date_format_options:
+      weekday: "long"
+      day: "numeric"
+      month: "numeric"
+
+alarm:
+    widget_type: alarm
+    entity: alarm_control_panel.home_alarm
+    title: Alarm
+
+
+weather_summary:
+    widget_type: weather_summary
+    entity: sensor.dark_sky_hourly_summary
+    title: Today's Weather
+
+current_conditions:
+    widget_type: weather
+    entity: sensor.dark_sky_temperature
+    title: Current Weather
+
+thermostat:
+    widget_type: climate
+    entity: climate.home
+    title: Thermostat
+
+security_ready:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_ready
+    title: Security
+    icon_on: mdi-alert-circle
+    icon_off: mdi-verified
+    state_text: 1
+    state_map:
+      "on": Not Ready
+      "off": Ready
+
+layout:
+    - clock(2x2), current_conditions(3x2), weather_summary(2x2)
+    -
+    - alarm(3x1), security_ready, thermostat(3x1)

@@ -1,0 +1,49 @@
+weather_frame:
+    widget_type: iframe
+    title: Radar
+    refresh: 300
+    frame_style: ""
+    img_list:
+      - !secret weather_gif_url
+
+current_weather:
+    title: Current Conditions
+    widget_type: weather
+
+hourly_summary:
+    title: Today's Forecast
+    widget_type: weather_summary
+    entity: sensor.dark_sky_hourly_summary
+
+daily_summary:
+    title: Weekly Forecast
+    widget_type: weather_summary
+    entity: sensor.dark_sky_daily_summary
+
+temperature:
+    title: Temperature
+    widget_type: temperature
+    entity: sensor.dark_sky_temperature
+
+precip:
+    title: Chance of rain
+    widget_type: sensor
+    entity: sensor.dark_sky_precip_probability
+
+wind:
+    title: Wind Speed
+    widget_type: sensor
+    entity: sensor.dark_sky_wind_speed
+
+sun:
+    title: Sun
+    widget_type: sensor
+    entity: sun.sun
+    state_map:
+      "above_horizon": Above Horizon
+      "below_horizon": Below Horizon
+
+layout:
+    - current_weather(2x2), daily_summary(1x3), weather_frame(4x3)
+    -
+    - sun(2x1)

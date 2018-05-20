@@ -1,0 +1,17 @@
+door_light:
+    widget_type: switch
+    title: Door Light
+    entity: switch.driveway_door_light
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+
+desktop_wol:
+    widget_type: switch
+    title: Ryan's Desktop
+    entity: switch.desktop
+    icon_off: fa-desktop
+    icon_on: fa-desktop
+
+layout:
+    - desktop_wol, door_light
+    - empty: 2

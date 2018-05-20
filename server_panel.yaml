@@ -1,0 +1,94 @@
+ups_voltage_in:
+    widget_type: sensor
+    title: UPS Input Voltage
+    units: "V"
+    entity: sensor.ups_input_voltage
+
+ups_voltage_out:
+    widget_type: sensor
+    title: UPS Output Voltage
+    units: "V"
+    entity: sensor.ups_output_voltage
+
+ups_load_pcnt:
+    widget_type: sensor
+    title: UPS Load
+    units: "%"
+    entity: sensor.ups_load
+
+ups_load_watts:
+    widget_type: sensor
+    title: UPS Load
+    units: "W"
+    entity: sensor.ups_load_watts
+
+ups_batt_pcnt:
+    widget_type: sensor
+    title: UPS Battery SoC
+    units: "%"
+    entity: sensor.ups_battery
+
+ups_status:
+    widget_type: sensor
+    title: UPS Status
+    entity: sensor.ups_status
+
+ups_time_left:
+    widget_type: sensor
+    title: UPS Time Left
+    units: "minutes"
+    entity: sensor.ups_time_left
+
+ups_transfer_count:
+    widget_type: sensor
+    title: UPS Transfer Count
+    entity: sensor.ups_transfer_count
+
+srvr_load:
+    widget_type: sensor
+    title: Server Load
+    units: "%"
+    entity: sensor.processor_use
+
+srvr_load_1m:
+    widget_type: sensor
+    title: Server Load 1m
+    units: "%"
+    entity: sensor.load_1m
+
+srvr_load_5m:
+    widget_type: sensor
+    title: Server Load 5m
+    units: "%"
+    entity: sensor.load_5m
+
+srvr_load_15m:
+    widget_type: sensor
+    title: Server Load 15m
+    units: "%"
+    entity: sensor.load_15m
+
+srvr_cpu_temp:
+    widget_type: sensor
+    title: CPU Temperature
+    entity: sensor.cpu_temp
+
+srvr_last_boot:
+    widget_type: sensor
+    title: Server Last Boot
+    entity: sensor.last_boot
+
+srvr_since_last_boot:
+    widget_type: sensor
+    title: Time Since Last Boot
+    entity: sensor.since_last_boot
+
+srvr_plex_watching:
+    widget_type: sensor
+    title: Plex Server
+    entity: sensor.plex
+
+layout:
+    - ups_status(2x1), ups_load_pcnt, spacer, srvr_load, srvr_load_1m, srvr_load_5m
+    - ups_voltage_in, ups_voltage_out, ups_load_watts, spacer, srvr_cpu_temp, srvr_last_boot, srvr_load_15m
+    - ups_batt_pcnt, ups_time_left, ups_transfer_count, spacer, srvr_plex_watching, srvr_since_last_boot

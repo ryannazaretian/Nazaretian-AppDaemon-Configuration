@@ -1,0 +1,8 @@
+dining_room_dimmer:
+    widget_type: light
+    title: Dining Room Light
+    entity: light.dining_room_dimmer
+
+layout:
+    - dining_room_dimmer(7x3)
+    - empty: 2

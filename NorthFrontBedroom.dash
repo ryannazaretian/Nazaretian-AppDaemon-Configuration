@@ -1,0 +1,8 @@
+title: North Front Bedroom
+widget_dimensions: [110, 110]
+widget_margins: [3, 3]
+columns: 7
+
+layout:
+    - include: north_front_bedroom_panel
+    - include: bottom_panel

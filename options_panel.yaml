@@ -1,0 +1,44 @@
+default:
+  title: Skin Change
+  title2: Default
+  widget_type: navigate
+  dashboard: Options
+  skin: default
+
+glassic:
+  title: Skin Change
+  title2: Glassic
+  widget_type: navigate
+  dashboard: Options
+  skin: glassic
+
+simplyred:
+  title: Skin Change
+  title2: Simply Red
+  widget_type: navigate
+  dashboard: Options
+  skin: simplyred
+
+zen:
+  title: Skin Change
+  title2: Zen
+  widget_type: navigate
+  dashboard: Options
+  skin: zen
+
+obsidian:
+  title: Skin Change
+  title2: Obsidian
+  widget_type: navigate
+  dashboard: Options
+  skin: obsidian
+
+touchpanel_brightness:
+  widget_type: input_number
+  title: Screen Brightness
+  entity: input_number.touchpanel_brightness
+
+layout:
+  - default, obsidian, zen, simplyred, glassic
+  - touchpanel_brightness(7x2)
+  -

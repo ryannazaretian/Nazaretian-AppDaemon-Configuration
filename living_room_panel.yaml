@@ -1,0 +1,24 @@
+lgtv:
+    widget_type: media_player
+    entity: media_player.living_room_tv
+    title: LG TV
+    step: 2
+    
+srvr_plex_watching:
+    widget_type: sensor
+    title: Plex Server
+    entity: sensor.plex
+
+apple_tv:
+    widget_type: media_player
+    entity: media_player.name_1
+    title: Apple TV
+
+chromecast:
+    widget_type: media_player
+    entity: media_player.ryans_chromecast
+    title: Chromecast
+
+layout:
+    - lgtv(2x3), apple_tv(2x3), chromecast(2x3), srvr_plex_watching
+    - empty: 2

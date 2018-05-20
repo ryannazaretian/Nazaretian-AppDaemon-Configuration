@@ -1,0 +1,58 @@
+ring_current_motion:
+    widget_type: binary_sensor
+    title: Motion Active
+    entity: binary_sensor.ring_office_door_motion
+    icon_off: mdi-sleep
+    icon_on: mdi-run-fast
+    state_text: 1
+    state_map:
+      "on": Motion Detected!
+      "off": No Motion
+
+ring_current_ding:
+    widget_type: binary_sensor
+    title: Ding Active
+    entity: binary_sensor.ring_office_door_ding
+    icon_off: mdi-bell-sleep
+    icon_on: mdi-bell-ring
+    state_text: 1
+    state_map:
+      "on": Active
+      "off": Inactive
+
+ring_camera:
+    widget_type: camera
+    title: Office Door Ring
+    refresh: 10
+    entity_picture: !secret office_door_ring_url
+
+door_light:
+    widget_type: switch
+    title: Door Light
+    entity: switch.driveway_door_light
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+
+flood_light:
+    widget_type: switch
+    title: Flood Light
+    entity: switch.driveway_flood_light
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+
+garage_door:
+    widget_type: cover
+    title: Garage Door
+    entity: cover.garage_door
+    icon_on: mdi-garage-open
+    icon_off: mdi-garage
+    icon_style_active: $style_active_warn
+    state_text: 1
+    state_map:
+      "open": Opened
+      "closed": Closed
+
+layout:
+    - ring_camera(5x3), door_light, flood_light
+    - ring_current_motion, ring_current_ding
+    - garage_door
