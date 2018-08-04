@@ -1,8 +1,3 @@
-alarm:
-    widget_type: alarm
-    entity: alarm_control_panel.home_alarm
-    title: Alarm
-
 subaru_presence:
     widget_type: binary_sensor
     entity: binary_sensor.subaru_parking
@@ -101,6 +96,17 @@ front_door:
     state_map:
       "on": Opened
       "off": Closed
+      
+office_door:
+    widget_type: binary_sensor
+    entity: binary_sensor.office_door
+    title: Office Door
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
 
 north_bedroom_bathroom_windows:
     widget_type: binary_sensor
@@ -116,14 +122,13 @@ north_bedroom_bathroom_windows:
 utility_room_window:
     widget_type: binary_sensor
     entity: binary_sensor.security_sensor_6
-    title: Utility Room Windows
+    title: Utility Room Window
     icon_off: mdi-window-closed
     icon_on: mdi-window-open
     state_text: 1
     state_map:
       "on": Opened
       "off": Closed
-
 
 garage_entry_door:
     widget_type: binary_sensor
@@ -147,6 +152,50 @@ smoke_heat_detectors:
       "on": Smoke!
       "off": Clear
 
+office_window_east:
+    widget_type: binary_sensor
+    entity: binary_sensor.office_window_east
+    title: East Office Window
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+office_window_west:
+    widget_type: binary_sensor
+    entity: binary_sensor.office_window_west
+    title: West Office Window
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+hvac_leak:
+    widget_type: binary_sensor
+    entity: binary_sensor.hvac_leak
+    title: HVAC Leak
+    icon_off: mdi-verified
+    icon_on: mdi-pipe-leak
+    state_text: 1
+    state_map:
+      "on": Wet
+      "off": Dry
+
+water_heater_leak:
+    widget_type: binary_sensor
+    entity: binary_sensor.water_heater_leak
+    title: Water Heater Leak
+    icon_off: mdi-verified
+    icon_on: mdi-pipe-leak
+    state_text: 1
+    state_map:
+      "on": Wet
+      "off": Dry
+
 security_ready:
     widget_type: binary_sensor
     entity: binary_sensor.security_ready
@@ -159,6 +208,6 @@ security_ready:
       "off": Ready
 
 layout:
-    - alarm(3x1), security_ready(2x1), subaru_presence, corvette_presence
-    - front_door, back_door_windows, garage_entry_door, garage_bay_door, front_door_motion, office_door_motion, smoke_heat_detectors
-    - front_house_windows, master_bedroom_bathroom_windows, north_bedroom_bathroom_windows, utility_room_window
+    - security_ready, subaru_presence, corvette_presence, water_heater_leak, hvac_leak, smoke_heat_detectors
+    - front_door, office_door, back_door_windows, garage_entry_door, garage_bay_door, front_door_motion, office_door_motion
+    - front_house_windows, master_bedroom_bathroom_windows, north_bedroom_bathroom_windows, utility_room_window, office_window_east, office_window_west

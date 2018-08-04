@@ -1,2 +1,21 @@
+ceiling_fan:
+    widget_type: switch
+    title: Ceiling Fan
+    entity: fan.master_bathroom_ceiling_fan
+    icon_on: mdi-fan
+    icon_off: mdi-fan-off
+    state_text: 1
+    
+temperature:
+    widget_type: sensor
+    title: Temperature
+    entity: sensor.master_bathroom_multisensor_temperature
+    
+humidity:
+    widget_type: sensor
+    title: Humidity
+    entity: sensor.master_bathroom_multisensor_humidity
+
 layout:
-    - empty: 3
+    - ceiling_fan(2x2), spacer, temperature(2x2), humidity(2x2)
+    - empty: 2

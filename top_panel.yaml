@@ -10,6 +10,12 @@ alarm:
     widget_type: alarm
     entity: alarm_control_panel.home_alarm
     title: Alarm
+    state_style: "font-size: 200%;"
+    # panel_state_style: "box-sizing: border-box; width: 50%; height: 50%"
+    # panel_code_style: "box-sizing: border-box; width: 50%; height: 50%"
+    # panel_background_style: "box-sizing: border-box; width: 50%; height: 50%"
+    panel_button_style: "box-sizing: border-box; width: 70px; height: 60px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px;"
+    
 
 
 weather_summary:

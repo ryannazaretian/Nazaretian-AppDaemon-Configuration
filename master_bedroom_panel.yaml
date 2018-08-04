@@ -1,2 +1,14 @@
+lgtv:
+    widget_type: media_player
+    entity: media_player.master_bedroom_tv
+    title: LG TV
+    step: 2
+
+apple_tv:
+    widget_type: media_player
+    entity: media_player.master_bedroom_apple_tv
+    title: Apple TV
+
 layout:
-    - empty: 3
+    - lgtv(3x3), spacer, apple_tv(3x3)
+    - empty: 2
