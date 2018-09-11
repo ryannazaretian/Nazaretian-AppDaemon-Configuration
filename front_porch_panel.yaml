@@ -1,7 +1,7 @@
 front_porch_lights:
     widget_type: switch
     title: Porch Lights
-    entity: switch.switch
+    entity: switch.front_porch_lights
     icon_off: mdi-lightbulb
     icon_on: mdi-lightbulb-on-outline
 

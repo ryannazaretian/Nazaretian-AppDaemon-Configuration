@@ -6,6 +6,11 @@ ceiling_fan:
     icon_off: mdi-fan-off
     state_text: 1
     
+vanity_dimmer:
+    widget_type: light
+    title: Vanity Lights
+    entity: light.master_bathroom_dimmer
+    
 temperature:
     widget_type: sensor
     title: Temperature
@@ -15,7 +20,19 @@ humidity:
     widget_type: sensor
     title: Humidity
     entity: sensor.master_bathroom_multisensor_humidity
+    
+motion:
+    widget_type: binary_sensor
+    title: Motion Active
+    entity: binary_sensor.master_bathroom_multisensor_motion
+    icon_off: mdi-sleep
+    icon_on: mdi-run-fast
+    state_text: 1
+    state_map:
+      "on": Motion
+      "off": No Motion
+
 
 layout:
-    - ceiling_fan(2x2), spacer, temperature(2x2), humidity(2x2)
+    - ceiling_fan(2x2), vanity_dimmer(2x2), motion(1x2), temperature(1x2), humidity(1x2)
     - empty: 2

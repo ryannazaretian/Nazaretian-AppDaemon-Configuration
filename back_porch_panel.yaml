@@ -1,2 +1,17 @@
+porch_lights:
+    widget_type: switch
+    title: Porch Lights
+    entity: switch.back_porch_lights
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+    
+flood_lights:
+    widget_type: switch
+    title: Back Yard Flood Lights
+    entity: switch.back_yard_floods
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+
 layout:
-    - empty: 3
+    - porch_lights, flood_lights
+    - empty: 2
