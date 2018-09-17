@@ -1,44 +1,50 @@
-default:
-  title: Skin Change
-  title2: Default
-  widget_type: navigate
-  dashboard: Options
-  skin: default
-
-glassic:
-  title: Skin Change
-  title2: Glassic
-  widget_type: navigate
-  dashboard: Options
-  skin: glassic
-
-simplyred:
-  title: Skin Change
-  title2: Simply Red
-  widget_type: navigate
-  dashboard: Options
-  skin: simplyred
-
-zen:
-  title: Skin Change
-  title2: Zen
-  widget_type: navigate
-  dashboard: Options
-  skin: zen
-
-obsidian:
-  title: Skin Change
-  title2: Obsidian
-  widget_type: navigate
-  dashboard: Options
-  skin: obsidian
-
+disable_security_beep:
+    widget_type: switch
+    title: Security Ready Beep
+    entity: input_boolean.disable_security_beep
+    icon_off: mdi-volume-high
+    icon_on: mdi-volume-off
+    
+guest_mode:
+    widget_type: switch
+    title: Guest Mode
+    entity: input_boolean.guest_mode
+    icon_off: mdi-account
+    icon_on: mdi-account-multiple
+    
+daytime_lags_sunrise:
+    widget_type: switch
+    title: Day mode follows sunrise
+    entity: input_boolean.daytime_mode_lags_sunrise
+    icon_off: mdi-calendar-clock
+    icon_on: mdi-weather-sunset-up
+    
+morning_follows_sunrise:
+    widget_type: switch
+    title: Morning follows sunrise
+    entity: input_boolean.morning_follows_sunrise
+    icon_off: mdi-calendar-clock
+    icon_on: mdi-weather-sunset-up
+    
+nighttime_follows_sunset:
+    widget_type: switch
+    title: Nighttime follows sunset
+    entity: input_boolean.nightmode_follows_sunset
+    icon_off: mdi-calendar-clock
+    icon_on: mdi-weather-sunset-down
+    
+daytime_mode_lag:
+    widget_type: input_number
+    title: Minutes after sunrise for daytime mode
+    entity: input_number.daytime_mode_lag
+    units: Minutes
+    
 touchpanel_brightness:
   widget_type: input_number
   title: Screen Brightness
   entity: input_number.touchpanel_brightness
 
 layout:
-  - default, obsidian, zen, simplyred, glassic
-  - touchpanel_brightness(7x2)
-  -
+  - disable_security_beep, guest_mode, morning_follows_sunrise, daytime_lags_sunrise, nighttime_follows_sunset
+  - daytime_mode_lag (7x1)
+  - touchpanel_brightness(7x1)

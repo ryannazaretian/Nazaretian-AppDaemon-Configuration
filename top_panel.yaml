@@ -16,7 +16,11 @@ alarm:
     # panel_background_style: "box-sizing: border-box; width: 50%; height: 50%"
     panel_button_style: "box-sizing: border-box; width: 70px; height: 60px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px;"
     
-
+home_mode:
+    widget_type: input_select
+    title: Mode
+    entity: input_select.house_mode
+    # select_style: "font-size: 125%;"
 
 weather_summary:
     widget_type: weather_summary
@@ -45,6 +49,6 @@ security_ready:
       "off": Ready
 
 layout:
-    - clock(2x2), current_conditions(3x2), weather_summary(2x2)
-    -
+    - clock(2x1), current_conditions(3x2), weather_summary(2x2)
+    - home_mode(2x1)
     - alarm(3x1), security_ready, thermostat(3x1)
