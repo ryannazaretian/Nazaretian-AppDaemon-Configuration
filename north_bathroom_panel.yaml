@@ -1,2 +1,14 @@
+north_bedroom_bathroom_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_5
+    title: North Rooms Windows
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
 layout:
-    - empty: 3
+    - north_bedroom_bathroom_windows
+    - empty: 2

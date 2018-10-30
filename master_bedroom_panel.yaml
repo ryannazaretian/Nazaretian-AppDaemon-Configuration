@@ -1,3 +1,19 @@
+occupancy:
+    widget_type: binary_sensor
+    entity: binary_sensor.master_bedroom__occupancy
+    title: Occupancy
+    icon_on: mdi-eye-outline
+    icon_off: mdi-eye-off-outline
+    state_text: 1
+    state_map:
+      "on": Occupied
+      "off": Not occupied
+      
+temperature:
+    widget_type: sensor
+    title: Temperature
+    entity: sensor.master_bedroom__temperature
+
 lgtv:
     widget_type: media_player
     entity: media_player.master_bedroom_tv
@@ -8,7 +24,20 @@ apple_tv:
     widget_type: media_player
     entity: media_player.master_bedroom_apple_tv
     title: Apple TV
-
+    
+master_bedroom_bathroom_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_3
+    title: Master Bed/Bath Windows
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+    
 layout:
-    - lgtv(3x3), spacer, apple_tv(3x3)
-    - empty: 2
+    - lgtv(3x2), spacer, apple_tv(3x2)
+    - empty: 1
+    - occupancy, temperature, master_bedroom_bathroom_windows
+    

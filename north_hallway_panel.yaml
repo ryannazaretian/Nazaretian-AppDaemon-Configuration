@@ -1,0 +1,34 @@
+thermostat:
+    widget_type: climate
+    entity: climate.home
+    title: Thermostat
+    step: 1
+    precision: 0
+    units: "&deg;F"
+    
+temperature:
+    widget_type: sensor
+    entity: sensor.home_temperature
+    title: North Hallway Temperature
+    unit: "&deg;F"
+
+humidity:
+    widget_type: sensor
+    entity: sensor.home_humidity
+    title: North Hallway Humidity
+    unit: "%"
+    
+occupancy:
+    widget_type: binary_sensor
+    entity: binary_sensor.home_occupancy
+    title: Occupancy
+    icon_on: mdi-eye-outline
+    icon_off: mdi-eye-off-outline
+    state_text: 1
+    state_map:
+      "on": Occupied
+      "off": Not occupied
+
+layout:
+    - thermostat(2x2), temperature(2x2), humidity(2x2), occupancy(1x2)
+    - empty: 2

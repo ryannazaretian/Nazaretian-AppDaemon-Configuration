@@ -11,6 +11,24 @@ vanity_dimmer:
     title: Vanity Lights
     entity: light.master_bathroom_dimmer
     
+nightlight_enable:
+    widget_type: input_boolean
+    title: Enable Nightlight
+    entity: input_boolean.master_bathroom_nightlight_enable
+    icon_on: mdi-weather-night
+    icon_off: mdi-weather-night
+    state_text: 1
+    
+nightlight_brightness:
+    widget_type: input_slider
+    title: Nightlight Brightness
+    entity: input_number.master_bathroom_nightlight_brightness
+    
+morning_brightness:
+    widget_type: input_slider
+    title: Morning Brightness
+    entity: input_number.master_bathroom_morning_brightness
+    
 temperature:
     widget_type: sensor
     title: Temperature
@@ -31,8 +49,30 @@ motion:
     state_map:
       "on": Motion
       "off": No Motion
+      
+master_bedroom_bathroom_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_3
+    title: Master Bed/Bath Windows
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
 
+occupancy:
+    widget_type: binary_sensor 
+    entity: binary_sensor.master_bathroom_occupancy
+    title: Occupancy
+    icon_on: mdi-eye-outline
+    icon_off: mdi-eye-off-outline
+    state_text: 1
+    state_map:
+      "on": Occupied
+      "off": Not occupied
 
 layout:
-    - ceiling_fan(2x2), vanity_dimmer(2x2), motion(1x2), temperature(1x2), humidity(1x2)
-    - empty: 2
+    - ceiling_fan, vanity_dimmer(2x1), temperature, humidity, motion, occupancy, master_bedroom_bathroom_windows
+    - nightlight_enable, nightlight_brightness(2x1), morning_brightness(2x1)
+    - empty: 1

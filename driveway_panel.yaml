@@ -40,19 +40,32 @@ flood_light:
     icon_off: mdi-lightbulb
     icon_on: mdi-lightbulb-on-outline
 
-garage_door:
-    widget_type: cover
-    title: Garage Door
-    entity: cover.garage_door
-    icon_on: mdi-garage-open
-    icon_off: mdi-garage
-    icon_style_active: $style_active_warn
+water_driveway:
+    widget_type: switch
+    entity: switch.driveway_
+    title: Driveway
+    icon_on: mdi-water
+    icon_off: mdi-water-off
     state_text: 1
     state_map:
-      "open": Opened
-      "closed": Closed
+      "on": Water 10m
+      "off": Disabled
 
+
+water_retaining_wall:
+    widget_type: switch
+    entity: switch.retaining_wall
+    title: Retaining Wall
+    icon_on: mdi-water
+    icon_off: mdi-water-off
+    state_text: 1
+    state_map:
+      "on": Water 10m
+      "off": Disabled
+
+
+      
 layout:
     - ring_camera(5x3), door_light, flood_light
     - ring_current_motion, ring_current_ding
-    - garage_door
+    - water_driveway, water_retaining_wall

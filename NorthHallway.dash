@@ -1,8 +1,8 @@
-title: Back Yard
+title: North Hallway
 widget_dimensions: [110, 110]
 widget_margins: [3, 3]
 columns: 7
 
 layout:
-    - include: back_porch_panel
+    - include: north_hallway_panel
     - include: bottom_panel

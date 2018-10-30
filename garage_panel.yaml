@@ -56,8 +56,51 @@ garage_temperature:
     title: Garage Temperature
     entity: sensor.garage_temperature
     unit: "&deg;F"
+    
+subaru_trig_distance:
+    widget_type: input_slider
+    title: Subaru Distance Trigger
+    entity: input_number.car0_distance_trigger   
+
+corvette_trig_distance:
+    widget_type: input_slider
+    title: Corvette Distance Trigger
+    entity: input_number.car1_distance_trigger   
+    
+garage_automation_enable:
+    widget_type: switch
+    title: Garage Automation
+    entity: input_boolean.garage_door_open_close_automation_enable
+    icon_on: mdi-garage
+    icon_off: mdi-garage
+    state_text: 1
+    state_map:
+      "on": Enabled
+      "off": Disabled
+      
+garage_bay_door:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_0
+    title: Garage Bay Door
+    icon_off: mdi-garage
+    icon_on: mdi-garage-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed      
+      
+garage_entry_door:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_8
+    title: Garage Entry Door
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
 
 layout:
-    - garage(2x2), subaru_presence(3x1), subaru_distance(2x1)
-    - corvette_presence(3x1), corvette_distance(2x1)
-    - flood_light(2x1), spacer(3x1), garage_temperature(2x1)
+    - garage, subaru_presence, subaru_trig_distance, subaru_distance, corvette_presence, corvette_trig_distance, corvette_distance
+    - garage_automation_enable, garage_bay_door, garage_entry_door, flood_light, garage_temperature
+    - 

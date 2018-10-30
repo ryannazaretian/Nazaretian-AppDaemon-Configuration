@@ -1,3 +1,20 @@
+occupancy:
+    widget_type: binary_sensor
+    entity: binary_sensor.living_room_occupancy
+    title: Occupancy
+    icon_on: mdi-eye-outline
+    icon_off: mdi-eye-off-outline
+    state_text: 1
+    state_map:
+      "on": Occupied
+      "off": Not occupied
+      
+temperature:
+    widget_type: sensor
+    title: Temperature
+    entity: sensor.living_room_temperature
+
+
 lgtv:
     widget_type: media_player
     entity: media_player.living_room_tv
@@ -8,7 +25,56 @@ apple_tv:
     widget_type: media_player
     entity: media_player.living_room_2
     title: Apple TV
+    
+front_door:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_4
+    title: Front Door
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+back_door_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_2
+    title: Back Door & Back Windows
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+
+neato:
+    widget_type: switch
+    entity: vacuum.neato
+    title: Neato Vacuum
+    icon_off: mdi-fan-off
+    icon_on: mdi-fan
+
+neato_battery:
+    widget_type: sensor
+    title: Neato Battery SoC
+    units: "%"
+    entity: vacuum.neato.battery_level
+
+neato_schedule:
+    widget_type: switch
+    entity: switch.neato_schedule
+    title: Neato Schedule
+    icon_on: mdi-timer
+    icon_off: mdi-timer-off
+
+neato_status:
+    widget_type: sensor
+    entity: sensor
+    title: Neato Status
+    entity: vacuum.neato.status
 
 layout:
-    - lgtv(3x3), spacer, apple_tv(3x3)
-    - empty: 2
+    - lgtv(3x2),  apple_tv(3x2), neato_status(1x2)
+    - empty: 1
+    - occupancy, temperature, front_door, back_door_windows, neato, neato_battery, neato_schedule

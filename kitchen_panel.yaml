@@ -1,2 +1,27 @@
+      
+
+kitchen_breakfastnook_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_1
+    title: East Office Window
+    icon_off: mdi-window-closed
+    icon_on: mdi-window-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed
+      
+dishwasher_leak:
+    widget_type: binary_sensor
+    entity: binary_sensor.dishwasher_leak
+    title: HVAC Leak
+    icon_off: mdi-verified
+    icon_on: mdi-pipe-leak
+    state_text: 1
+    state_map:
+      "on": Wet
+      "off": Dry
+
 layout:
-    - empty: 3
+    - kitchen_breakfastnook_windows, dishwasher_leak
+    - empty: 2

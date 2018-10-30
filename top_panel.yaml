@@ -36,6 +36,8 @@ thermostat:
     widget_type: climate
     entity: climate.home
     title: Thermostat
+    step: 1
+    units: "&deg;F"
 
 security_ready:
     widget_type: binary_sensor

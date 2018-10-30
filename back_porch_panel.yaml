@@ -11,7 +11,40 @@ flood_lights:
     entity: switch.back_yard_floods
     icon_off: mdi-lightbulb
     icon_on: mdi-lightbulb-on-outline
+    
+water_back_shrubs:
+    widget_type: switch
+    entity: switch.back_shrubs
+    title: Back Shrubs
+    icon_on: mdi-water
+    icon_off: mdi-water-off
+    state_text: 1
+    state_map:
+      "on": Water 10m
+      "off": Disabled
+
+water_back_lawn:
+    widget_type: switch
+    entity: switch.back_lawn
+    title: Back Lawn
+    icon_on: mdi-water
+    icon_off: mdi-water-off
+    state_text: 1
+    state_map:
+      "on": Water 10m
+      "off": Disabled
+
+back_door_windows:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_2
+    title: Back Door & Back Windows
+    icon_off: mdi-door-closed
+    icon_on: mdi-door-open
+    state_text: 1
+    state_map:
+      "on": Opened
+      "off": Closed      
 
 layout:
-    - porch_lights, flood_lights
+    - porch_lights, flood_lights, back_door_windows, water_back_lawn, water_back_shrubs
     - empty: 2

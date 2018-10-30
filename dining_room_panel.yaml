@@ -2,7 +2,20 @@ dining_room_dimmer:
     widget_type: light
     title: Dining Room Light
     entity: light.dining_room_dimmer
+    
+nightlight_enable:
+    widget_type: input_boolean
+    title: Enable Nightlight
+    entity: input_boolean.dining_room_nightlight_enable
+    icon_on: mdi-weather-night
+    icon_off: mdi-weather-night
+    state_text: 1
+    
+nightlight_brightness:
+    widget_type: input_slider
+    title: Nightlight Brightness
+    entity: input_number.dining_room_nightlight_brightness
 
 layout:
-    - dining_room_dimmer(7x3)
+    - dining_room_dimmer(2x1), nightlight_enable(2x1), nightlight_brightness(2x1)
     - empty: 2

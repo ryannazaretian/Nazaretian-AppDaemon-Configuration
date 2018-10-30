@@ -1,0 +1,49 @@
+smoke_heat_detectors:
+    widget_type: binary_sensor
+    entity: binary_sensor.security_sensor_10
+    title: Smoke & Heat Detectors
+    icon_off: mdi-verified
+    icon_on: mdi-fire
+    state_text: 1
+    state_map:
+      "on": Smoke!
+      "off": Clear
+      
+hvac_leak:
+    widget_type: binary_sensor
+    entity: binary_sensor.hvac_leak
+    title: HVAC Leak
+    icon_off: mdi-verified
+    icon_on: mdi-pipe-leak
+    state_text: 1
+    state_map:
+      "on": Wet
+      "off": Dry
+
+water_heater_leak:
+    widget_type: binary_sensor
+    entity: binary_sensor.water_heater_leak
+    title: Water Heater Leak
+    icon_off: mdi-verified
+    icon_on: mdi-pipe-leak
+    state_text: 1
+    state_map:
+      "on": Wet
+      "off": Dry
+      
+hvac_temperature:
+    widget_type: sensor
+    title: HVAC Attic Temperature
+    entity: sensor.homeseer_unknown_type0201_id000a_temperature_7
+    unit: "&deg;F"
+
+water_heater_temperature:
+    widget_type: sensor
+    title: Water Heater Attic Temperature
+    entity: sensor.homeseer_unknown_type0201_id000a_temperature_9
+    unit: "&deg;F"
+
+layout:
+    - smoke_heat_detectors, hvac_leak, water_heater_leak, hvac_temperature(2x1), water_heater_temperature(2x1)
+    - 
+    - 

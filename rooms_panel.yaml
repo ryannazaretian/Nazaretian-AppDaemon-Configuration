@@ -78,7 +78,7 @@ load_front_porch:
 
 load_back_porch:
     widget_type: navigate
-    title: Back Porch
+    title: Back Yard
     icon_inactive: fa-tree
     dashboard: BackPorch
 
@@ -87,8 +87,26 @@ load_home:
     title: Whole Home
     icon_inactive: fa-home
     dashboard: WholeHome
+    
+load_attic:
+    widget_type: navigate
+    title: Attic
+    icon_inactive: mdi-stairs
+    dashboard: Attic
+    
+load_north_hallway:
+    widget_type: navigate
+    title: North Hallway
+    icon_inactive: mdi-door
+    dashboard: NorthHallway
+    
+load_utility:
+    widget_type: navigate
+    title: Utility Room
+    icon_inactive: mdi-server
+    dashboard: Utility
 
 layout:
     - load_home(2x1), load_office, load_living_room, load_dining_room, load_kitchen, load_half_bathroom
-    - load_driveway(2x1), load_garage(2x1), load_front_porch(2x1), load_back_porch
-    - load_master_bedroom(2x1), load_master_bathroom(2x1), load_north_front_bedroom, load_north_back_bedroom, load_north_bathroom
+    - load_driveway(2x1), load_garage, load_utility, load_front_porch, load_back_porch, load_attic
+    - load_master_bedroom(2x1), load_master_bathroom, load_north_hallway, load_north_front_bedroom, load_north_back_bedroom, load_north_bathroom
