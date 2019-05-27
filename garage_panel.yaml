@@ -1,7 +1,7 @@
 garage:
     widget_type: cover
     title: Garage Door
-    entity: cover.garage_door
+    entity: cover.garage_door_cover
     icon_on: mdi-garage-open
     icon_off: mdi-garage
     icon_style_active: $style_active_warn
@@ -19,8 +19,8 @@ flood_light:
 
 subaru_presence:
     widget_type: binary_sensor
-    entity: binary_sensor.subaru_parking
-    title: Subaru Presence
+    entity: binary_sensor.left_side_parking
+    title: Left Car Presence
     icon_on: mdi-home
     icon_off: mdi-road
     state_text: 1
@@ -28,10 +28,10 @@ subaru_presence:
       "on": Home
       "off": Away
 
-corvette_presence:
+honda_presence:
     widget_type: binary_sensor
-    entity: binary_sensor.corvette_parking
-    title: Corvette Presence
+    entity: binary_sensor.right_side_parking
+    title: Right Car Presence
     icon_on: mdi-home
     icon_off: mdi-road
     state_text: 1
@@ -41,31 +41,25 @@ corvette_presence:
 
 subaru_distance:
     widget_type: sensor
-    title: Subaru Distance
+    title: Left Car Distance
     units: "in"
-    entity: sensor.subaru_sensor_distance
+    entity: sensor.left_vehicle_sensor
 
-corvette_distance:
+honda_distance:
     widget_type: sensor
-    title: Corvette Distance
+    title: Right Car Distance
     units: in
-    entity: sensor.corvette_sensor_distance
+    entity: sensor.right_vehicle_sensor
 
-garage_temperature:
-    widget_type: sensor
-    title: Garage Temperature
-    entity: sensor.garage_temperature
-    unit: "&deg;F"
-    
 subaru_trig_distance:
     widget_type: input_slider
-    title: Subaru Distance Trigger
-    entity: input_number.car0_distance_trigger   
+    title: Left Distance Trigger
+    entity: input_number.left_car_distance_trigger  
 
-corvette_trig_distance:
+honda_trig_distance:
     widget_type: input_slider
-    title: Corvette Distance Trigger
-    entity: input_number.car1_distance_trigger   
+    title: Right Distance Trigger
+    entity: input_number.right_car_distance_trigger   
     
 garage_automation_enable:
     widget_type: switch
@@ -77,17 +71,7 @@ garage_automation_enable:
     state_map:
       "on": Enabled
       "off": Disabled
-      
-garage_bay_door:
-    widget_type: binary_sensor
-    entity: binary_sensor.security_sensor_0
-    title: Garage Bay Door
-    icon_off: mdi-garage
-    icon_on: mdi-garage-open
-    state_text: 1
-    state_map:
-      "on": Opened
-      "off": Closed      
+          
       
 garage_entry_door:
     widget_type: binary_sensor
@@ -99,8 +83,63 @@ garage_entry_door:
     state_map:
       "on": Opened
       "off": Closed
+    
+car_1_ble:
+   widget_type: binary_sensor
+   entity: binary_sensor.car_1_ble_tracker
+   title: Car 1 BLE Tracker
+   icon_on: mdi-home
+   icon_off: mdi-road
+   state_text: 1
+   state_map:
+     "on": Home
+     "off": Away
+      
+car_2_ble:
+   widget_type: binary_sensor
+   entity: binary_sensor.car_1_ble_tracker
+   title: Car 2 BLE Tracker
+   icon_on: mdi-home
+   icon_off: mdi-road
+   state_text: 1
+   state_map:
+     "on": Home
+     "off": Away
+     
+chelsea_automation: 
+   widget_type: switch
+   entity: input_boolean.garage_door_open_chelsea_arrives
+   title: Chelsea Automation
+   icon_on: mdi-parking
+   icon_off: mdi-parking
+   state_text: 1
+   state_map:
+      "on": Enabled
+      "off": Disabled
 
+ryan_automation:
+   widget_type: switch
+   entity: input_boolean.garage_door_open_ryan_arrives
+   title: Ryan Automation
+   icon_on: mdi-parking
+   icon_off: mdi-parking
+   state_text: 1
+   state_map:
+     "on": Enabled
+     "off": Disabled
+     
+ble_automation: 
+   widget_type: switch
+   entity: input_boolean.garage_door_open_ble_arrival
+   title: BLE Beacon Automation
+   icon_on: mdi-bluetooth
+   icon_off: mdi-bluetooth-off
+   state_text: 1
+   state_map:
+     "on": Enabled
+     "off": Disabled
+     
 layout:
-    - garage, subaru_presence, subaru_trig_distance, subaru_distance, corvette_presence, corvette_trig_distance, corvette_distance
-    - garage_automation_enable, garage_bay_door, garage_entry_door, flood_light, garage_temperature
+    - garage, garage_automation_enable, chelsea_automation, ryan_automation, ble_automation, subaru_trig_distance, honda_trig_distance
+    - garage_entry_door, subaru_distance, honda_distance, subaru_presence, honda_presence, car_1_ble, car_2_ble
     - 

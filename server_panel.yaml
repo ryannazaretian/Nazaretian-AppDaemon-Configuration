@@ -72,23 +72,20 @@ srvr_cpu_temp:
     widget_type: sensor
     title: CPU Temperature
     entity: sensor.cpu_temp
+    
+ups_temp:
+    widget_type: sensor
+    title: UPS Temperature
+    entity: sensor.ups_internal_temperature
 
 srvr_last_boot:
     widget_type: sensor
     title: Server Last Boot
     entity: sensor.last_boot
 
-srvr_since_last_boot:
-    widget_type: sensor
-    title: Time Since Last Boot
-    entity: sensor.since_last_boot
 
-# srvr_plex_watching:
-    # widget_type: sensor
-    # title: Plex Server
-    # entity: sensor.plex
 
 layout:
     - ups_status(2x1), ups_load_pcnt, spacer, srvr_load, srvr_load_1m, srvr_load_5m
-    - ups_voltage_in, ups_voltage_out, ups_load_watts, spacer, srvr_cpu_temp, srvr_last_boot, srvr_load_15m
-    - ups_batt_pcnt, ups_time_left, ups_transfer_count, spacer, srvr_since_last_boot(3x1) #, srvr_plex_watching,
+    - ups_voltage_in, ups_voltage_out, ups_load_watts, spacer, srvr_cpu_temp, ups_temp, srvr_load_15m
+    - ups_batt_pcnt, ups_time_left, ups_transfer_count, spacer, srvr_last_boot(3x1)

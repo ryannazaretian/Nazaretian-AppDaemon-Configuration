@@ -42,7 +42,7 @@ flood_light:
 
 water_driveway:
     widget_type: switch
-    entity: switch.driveway_
+    entity: switch.driveway
     title: Driveway
     icon_on: mdi-water
     icon_off: mdi-water-off

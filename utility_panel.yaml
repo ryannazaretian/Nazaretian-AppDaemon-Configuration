@@ -106,14 +106,13 @@ srvr_last_boot:
     title: Server Last Boot
     entity: sensor.last_boot
 
-srvr_since_last_boot:
+ups_temp:
     widget_type: sensor
-    title: Time Since Last Boot
-    entity: sensor.since_last_boot
-  
+    title: UPS Temperature
+    entity: sensor.ups_internal_temperature  
 
 
 layout:
-    - speedtest_trigger, garage_entry_door, utility_room_window, srvr_load, srvr_cpu_temp, srvr_since_last_boot, ups_status
+    - speedtest_trigger, garage_entry_door, utility_room_window, srvr_load, srvr_cpu_temp, ups_temp, ups_status
     - ups_voltage_in, ups_voltage_out, ups_load_pcnt, ups_load_watts, ups_batt_pcnt, ups_time_left, ups_transfer_count
-    - srvr_load_1m, srvr_load_5m, srvr_load_15m, srvr_last_boot
+    - srvr_load_1m, srvr_load_5m, srvr_load_15m, srvr_last_boot(2x1)

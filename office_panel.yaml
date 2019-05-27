@@ -1,18 +1,18 @@
-occupancy:
-    widget_type: binary_sensor
-    entity: binary_sensor.office_occupancy
-    title: Occupancy
-    icon_on: mdi-eye-outline
-    icon_off: mdi-eye-off-outline
-    state_text: 1
-    state_map:
-      "on": Occupied
-      "off": Not occupied
+# occupancy:
+    # widget_type: binary_sensor
+    # entity: binary_sensor.office_occupancy
+    # title: Occupancy
+    # icon_on: mdi-eye-outline
+    # icon_off: mdi-eye-off-outline
+    # state_text: 1
+    # state_map:
+      # "on": Occupied
+      # "off": Not occupied
       
-temperature:
-    widget_type: sensor
-    title: Temperature
-    entity: sensor.office_temperature
+# temperature:
+    # widget_type: sensor
+    # title: Temperature
+    # entity: sensor.office_temperature
 
 door_light:
     widget_type: switch
@@ -63,5 +63,5 @@ office_window_west:
       "off": Closed
 
 layout:
-    - desktop_wol, door_light, occupancy, temperature, office_door, office_window_east, office_window_west
+    - desktop_wol, door_light, office_door, office_window_east, office_window_west
     - empty: 2

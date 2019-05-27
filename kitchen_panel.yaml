@@ -14,7 +14,7 @@ kitchen_breakfastnook_windows:
 dishwasher_leak:
     widget_type: binary_sensor
     entity: binary_sensor.dishwasher_leak
-    title: HVAC Leak
+    title: Dishwasher Leak
     icon_off: mdi-verified
     icon_on: mdi-pipe-leak
     state_text: 1
@@ -22,6 +22,30 @@ dishwasher_leak:
       "on": Wet
       "off": Dry
 
+kitchen_main_dimmer:
+    widget_type: light
+    title: Kitchen Lights
+    entity: light.main_kitchen
+    
+breakfast_dimmer:
+    widget_type: light
+    title: Breakfast Nook Light
+    entity: light.breakfast_nook
+    
+bar_dimmer:
+    widget_type: light
+    title: Bar Lights
+    entity: light.bar
+    
+outlet:
+    widget_type: switch
+    title: Outlet
+    entity: switch.kitchen_seasonal
+    icon_off: mdi-power-socket-us
+    icon_on: mdi-power-socket-us
+      
+
 layout:
-    - kitchen_breakfastnook_windows, dishwasher_leak
-    - empty: 2
+    - kitchen_breakfastnook_windows, dishwasher_leak, outlet
+    - kitchen_main_dimmer(3x1), spacer, bar_dimmer(3x1)
+    - breakfast_dimmer(3x1)

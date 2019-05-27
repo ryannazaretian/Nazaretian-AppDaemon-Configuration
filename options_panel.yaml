@@ -39,12 +39,21 @@ daytime_mode_lag:
     entity: input_number.daytime_mode_lag
     units: Minutes
     
+vacation_mode:
+    widget_type: switch
+    title: Vacation Mode
+    entity: input_boolean.vacation_mode
+    icon_off: mdi-briefcase
+    icon_on: mdi-beach
+    
+
+    
 touchpanel_brightness:
   widget_type: input_number
   title: Screen Brightness
   entity: input_number.touchpanel_brightness
 
 layout:
-  - disable_security_beep, guest_mode, morning_follows_sunrise, daytime_lags_sunrise, nighttime_follows_sunset
+  - disable_security_beep, guest_mode, vacation_mode, morning_follows_sunrise, daytime_lags_sunrise, nighttime_follows_sunset
   - daytime_mode_lag (7x1)
   - touchpanel_brightness(7x1)

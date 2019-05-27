@@ -5,12 +5,6 @@ porch_lights:
     icon_off: mdi-lightbulb
     icon_on: mdi-lightbulb-on-outline
     
-flood_lights:
-    widget_type: switch
-    title: Back Yard Flood Lights
-    entity: switch.back_yard_floods
-    icon_off: mdi-lightbulb
-    icon_on: mdi-lightbulb-on-outline
     
 water_back_shrubs:
     widget_type: switch
@@ -43,8 +37,22 @@ back_door_windows:
     state_text: 1
     state_map:
       "on": Opened
-      "off": Closed      
+      "off": Closed  
+
+ring_camera_north:
+    widget_type: camera
+    title: North Ring
+    refresh: 10
+    entity_picture: !secret north_ring_url     
+
+ring_camera_south:
+    widget_type: camera
+    title: South Ring
+    refresh: 10
+    entity_picture: !secret south_ring_url      
 
 layout:
-    - porch_lights, flood_lights, back_door_windows, water_back_lawn, water_back_shrubs
-    - empty: 2
+    - porch_lights, back_door_windows, water_back_lawn, water_back_shrubs
+    - ring_camera_north(3x2), spacer(1x2), ring_camera_south(3x2)
+    - 
+

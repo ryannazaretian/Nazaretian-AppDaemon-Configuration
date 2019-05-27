@@ -1,19 +1,19 @@
-occupancy:
-    widget_type: binary_sensor
-    entity: binary_sensor.bens_room_occupancy
-    title: Occupancy
-    icon_on: mdi-eye-outline
-    icon_off: mdi-eye-off-outline
-    state_text: 1
-    state_map:
-      "on": Occupied
-      "off": Not occupied
+# occupancy:
+    # widget_type: binary_sensor
+    # entity: binary_sensor.ben_s_room_occupancy
+    # title: Occupancy
+    # icon_on: mdi-eye-outline
+    # icon_off: mdi-eye-off-outline
+    # state_text: 1
+    # state_map:
+      # "on": Occupied
+      # "off": Not occupied
       
-temperature:
-    widget_type: sensor
-    title: Temperature
-    entity: sensor.bens_room_temperature
-    unit: "&deg;F"
+# temperature:
+    # widget_type: sensor
+    # title: Temperature
+    # entity: sensor.ben_s_room_temperature
+    # unit: "&deg;F"
     
 
 north_bedroom_bathroom_windows:
@@ -26,7 +26,15 @@ north_bedroom_bathroom_windows:
     state_map:
       "on": Opened
       "off": Closed
+      
+lamp:
+    widget_type: switch
+    title: MSU Lamp
+    entity: switch.bens_lamp
+    icon_off: mdi-lamp
+    icon_on: mdi-lamp
+
 
 layout:
-    - occupancy, temperature, north_bedroom_bathroom_windows
+    - north_bedroom_bathroom_windows, lamp
     - empty: 2

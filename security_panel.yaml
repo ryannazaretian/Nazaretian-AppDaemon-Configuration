@@ -1,7 +1,7 @@
-subaru_presence:
+left_car_presence:
     widget_type: binary_sensor
     entity: binary_sensor.subaru_parking
-    title: Subaru Presence
+    title: Left Car Presence
     icon_on: mdi-home
     icon_off: mdi-road
     state_text: 1
@@ -9,10 +9,10 @@ subaru_presence:
       "on": Home
       "off": Away
 
-corvette_presence:
+right_car_presence:
     widget_type: binary_sensor
     entity: binary_sensor.corvette_parking
-    title: Corvette Presence
+    title: Right Car Presence
     icon_on: mdi-home
     icon_off: mdi-road
     state_text: 1
@@ -219,6 +219,6 @@ security_ready:
       "off": Ready
 
 layout:
-    - security_ready, subaru_presence, corvette_presence, water_heater_leak, hvac_leak, dishwasher_leak, smoke_heat_detectors
+    - security_ready, left_car_presence, right_car_presence, water_heater_leak, hvac_leak, dishwasher_leak, smoke_heat_detectors
     - front_door, office_door, back_door_windows, garage_entry_door, garage_bay_door, front_door_motion, office_door_motion
     - front_house_windows, master_bedroom_bathroom_windows, north_bedroom_bathroom_windows, utility_room_window, office_window_east, office_window_west

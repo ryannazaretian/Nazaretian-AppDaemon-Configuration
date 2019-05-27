@@ -47,8 +47,17 @@ ring_battery:
     widget_type: sensor
     title: Ring Battery
     entity: sensor.ring_front_door_battery
+    
+    
+front_yard_lights:
+    widget_type: switch
+    title: Yard Lights
+    entity: switch.front_yard_lighting
+    icon_off: mdi-lightbulb
+    icon_on: mdi-lightbulb-on-outline
+
 
 layout:
     - ring_camera(5x3), ring_last_motion, ring_last_ding
     - ring_recent_motion, ring_recent_ding
-    - front_porch_lights, ring_battery
+    - front_porch_lights, front_yard_lights

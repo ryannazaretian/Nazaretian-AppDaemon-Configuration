@@ -1,19 +1,19 @@
-occupancy:
-    widget_type: binary_sensor
-    entity: binary_sensor.guest_bedroom_occupancy
-    title: Occupancy
-    icon_on: mdi-eye-outline
-    icon_off: mdi-eye-off-outline
-    state_text: 1
-    state_map:
-      "on": Occupied
-      "off": Not occupied
+# occupancy:
+    # widget_type: binary_sensor
+    # entity: binary_sensor.guest_bedroom_occupancy
+    # title: Occupancy
+    # icon_on: mdi-eye-outline
+    # icon_off: mdi-eye-off-outline
+    # state_text: 1
+    # state_map:
+      # "on": Occupied
+      # "off": Not occupied
       
-temperature:
-    widget_type: sensor
-    title: Temperature
-    entity: sensor.guest_bedroom_temperature
-    unit: "&deg;F"
+# temperature:
+    # widget_type: sensor
+    # title: Temperature
+    # entity: sensor.guest_bedroom_temperature
+    # unit: "&deg;F"
 
 north_bedroom_bathroom_windows:
     widget_type: binary_sensor
@@ -27,5 +27,5 @@ north_bedroom_bathroom_windows:
       "off": Closed
     
 layout:
-    - occupancy, temperature, north_bedroom_bathroom_windows
+    - north_bedroom_bathroom_windows
     - empty: 2

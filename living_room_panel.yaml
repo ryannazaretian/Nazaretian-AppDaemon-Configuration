@@ -1,30 +1,19 @@
-occupancy:
-    widget_type: binary_sensor
-    entity: binary_sensor.living_room_occupancy
-    title: Occupancy
-    icon_on: mdi-eye-outline
-    icon_off: mdi-eye-off-outline
-    state_text: 1
-    state_map:
-      "on": Occupied
-      "off": Not occupied
+# occupancy:
+    # widget_type: binary_sensor
+    # entity: binary_sensor.living_room_occupancy
+    # title: Occupancy
+    # icon_on: mdi-eye-outline
+    # icon_off: mdi-eye-off-outline
+    # state_text: 1
+    # state_map:
+      # "on": Occupied
+      # "off": Not occupied
       
-temperature:
-    widget_type: sensor
-    title: Temperature
-    entity: sensor.living_room_temperature
+# temperature:
+    # widget_type: sensor
+    # title: Temperature
+    # entity: sensor.living_room_temperature
 
-
-lgtv:
-    widget_type: media_player
-    entity: media_player.living_room_tv
-    title: LG TV
-    step: 2
-
-apple_tv:
-    widget_type: media_player
-    entity: media_player.living_room_2
-    title: Apple TV
     
 front_door:
     widget_type: binary_sensor
@@ -73,8 +62,31 @@ neato_status:
     entity: sensor
     title: Neato Status
     entity: vacuum.neato.status
+    
+living_room_dimmer:
+    widget_type: light
+    title: Living Room Light
+    entity: light.living_room
+    
+parlor_dimmer:
+    widget_type: light
+    title: Parlor Light
+    entity: light.parlor
+    
+fireplace_dimmer:
+    widget_type: light
+    title: Fireplace Light
+    entity: light.fireplace
+    
+outlet:
+    widget_type: switch
+    title: Outlet
+    entity: switch.living_room_seasonal
+    icon_off: mdi-power-socket-us
+    icon_on: mdi-power-socket-us
+    
 
 layout:
-    - lgtv(3x2),  apple_tv(3x2), neato_status(1x2)
-    - empty: 1
-    - occupancy, temperature, front_door, back_door_windows, neato, neato_battery, neato_schedule
+    - living_room_dimmer(3x1),  parlor_dimmer(3x1), neato_status(1x2)
+    - fireplace_dimmer(3x1), outlet
+    - front_door, back_door_windows, neato, neato_battery, neato_schedule

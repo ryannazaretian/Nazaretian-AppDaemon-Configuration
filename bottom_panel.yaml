@@ -32,7 +32,7 @@ reload:
     widget_type: reload
     title: Reload
     icon_active: fa-spinner fa-spin
-    icon_inactive: fa-refresh
+    icon_inactive: fa-redo
 
 load_options:
     widget_type: navigate

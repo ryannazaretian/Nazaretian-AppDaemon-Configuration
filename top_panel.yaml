@@ -49,8 +49,34 @@ security_ready:
     state_map:
       "on": Not Ready
       "off": Ready
+      
+garage:
+    widget_type: cover
+    title: Garage Door
+    entity: cover.garage_door
+    icon_on: mdi-garage-open
+    icon_off: mdi-garage
+    icon_style_active: $style_active_warn
+    state_text: 1
+    state_map:
+      "open": Opened
+      "closed": Closed
 
+net_power:
+    widget_type: sensor
+    title: Net Power
+    entity: sensor.envoy_current_net_energy
+    value_style: "font-size: 100%;"
+
+    
+home_power:
+    widget_type: sensor
+    title: Home Power Consumption
+    entity: sensor.envoy_current_energy_consumption
+    value_style: "font-size: 100%;"
+
+      
 layout:
     - clock(2x1), current_conditions(3x2), weather_summary(2x2)
     - home_mode(2x1)
-    - alarm(3x1), security_ready, thermostat(3x1)
+    - alarm(3x1), security_ready(1x1), garage(1x1), home_power(1x1), net_power(1x1) # , thermostat(3x1)
